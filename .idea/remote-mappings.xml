@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteMappingsManager">
+    <list>
+      <list>
+        <remote-mappings server-id="python@ssh://liuyifan@222.20.97.43:123/home/data/liuyifan/anaconda3/envs/airnet/bin/python" />
+      </list>
+    </list>
+  </component>
+</project>
