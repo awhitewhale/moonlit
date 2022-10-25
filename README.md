@@ -1,5 +1,5 @@
-# MOONLIT: Momentum-contrast and Large-kernel for Multi-ne-grained Deraining
-code for MOONLIT: Momentum-contrast and Large-kernel for Multi-ne-grained Deraining
+# MOONLIT: Momentum-contrast and Large-kernel for Multi-fine-grained Deraining
+code for MOONLIT: Momentum-contrast and Large-kernel for Multi-fine-grained Deraining
 
 train:
 `python train.py --batch_size 100 --net_name 'resnet'`
