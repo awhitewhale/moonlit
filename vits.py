@@ -115,6 +115,7 @@ def vit_small(**kwargs):
     model.default_cfg = _cfg()
     return model
 
+
 def vit_base(**kwargs):
     model = VisionTransformerMoCo(
         patch_size=16, embed_dim=768, depth=12, num_heads=12, mlp_ratio=4, qkv_bias=True,
