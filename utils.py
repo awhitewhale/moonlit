@@ -308,8 +308,8 @@ class TrainDataset(Dataset):
         super(TrainDataset, self).__init__()
         self.opt = opt
         self.counter = 0
-        self.path = '/home/data/liuyifan/project/datasets/derain/SPA-Data/'
-        self.datapath = "/home/data/liuyifan/project/datasets/derain/SPA-Data/real_world.txt"
+        self.path = '/home/data/liuyifan/project/datasets/derain/SPA-Data/' # need be changed while testing
+        self.datapath = "/home/data/liuyifan/project/datasets/derain/SPA-Data/real_world.txt" # need be changed while testing
         self.data_item = []
         self.data_item += [item_i.strip() for item_i in open(self.datapath)]
         self.crop_transform = Compose([ToPILImage(), RandomCrop(opt.patch_size), ])
