@@ -69,7 +69,7 @@ class UMRC(nn.Module):
         if opt.net_name == 'resnet':
             self.UMRC = MoCo(base_encoder=ResEncoder, dim=256, K=opt.batch_size * 256)
         elif opt.net_name == 'vit':
-            self.UMRC = MoCo(base_encoder=ResEncoder, dim=256, K=opt.batch_size * 256)
+            self.UMRC = MoCo(base_encoder=vits.vit_base, dim=256, K=opt.batch_size * 256)
 
     def forward(self, x_query, x_key, opt):
         key, query, labels, inter = self.UMRC(x_query, x_key, opt)
