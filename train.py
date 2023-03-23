@@ -1,5 +1,5 @@
 import argparse, os
-os.environ['CUDA_VISIBLE_DEVICES'] = '7'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0,1,2,3,4,5,6,7'
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
@@ -26,7 +26,7 @@ def train(opt):
                             drop_last=True,
                             num_workers=opt.num_workers)
     net = moonlit(opt).cuda()
-
+    net = torch.nn.DataParallel(net, device_ids=[0,1,2,3,4,5,6,7])
     net.train()
     optimizer = optim.Adam(net.parameters(), lr=opt.lr)
     UMRC_loss = nn.CrossEntropyLoss().cuda()
@@ -37,15 +37,15 @@ def train(opt):
             query, key, query_gt, key_gt = query.to(device), key.to(device), query_gt.to(device), key_gt.to(device)
             optimizer.zero_grad()
             if epoch < opt.UMRC_epoch:
-                key_moco, query_moco, labels_moco, inter_moco = net.UMRC(query, key, opt)
+                key_moco, query_moco, labels_moco, inter_moco = net.module.UMRC(query, key, opt)
                 contrast_loss = UMRC_loss(query_moco, labels_moco,)
                 loss = contrast_loss
             else:
-                restored, query, labels = net(x_query=query, x_key=key, opt=opt)
+                restored, query, labels = net.module(x_query=query, x_key=key, opt=opt)
                 contrast_loss_value = UMRC_loss(query, labels)
                 LDRN_loss_value = LDRN_loss(restored, query_gt)
                 loss = LDRN_loss_value + 0.1 * contrast_loss_value
-            total_iter = total_iter+1
+            total_iter = total_iter + 1
             loss.backward()
             optimizer.step()
         if epoch >= opt.UMRC_epoch:
@@ -69,13 +69,13 @@ def train(opt):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--epoch', type=int, default=1000)
-    parser.add_argument('--UMRC_epoch', type=int, default=1)
+    parser.add_argument('--UMRC_epoch', type=int, default=100)
     parser.add_argument('--lr', type=float, default=1e-4)
     parser.add_argument('--num_workers', type=int, default=8)
+    parser.add_argument('--batch_size', type=int, default=100)
     parser.add_argument('--patch_size', type=int, default=128)
     parser.add_argument('--net_name', type=str, default='resnet')
     # parser.add_argument('--net_name', type=str, default='vit')
     parser = parser.parse_args()
-    parser.batch_size = 100
     train(parser)
 

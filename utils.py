@@ -1,4 +1,5 @@
 import os, glob, random
+os.environ['CUDA_VISIBLE_DEVICES'] = '0,1,2,3,4,5,6,7'
 from PIL import Image
 from torchvision.transforms import ToPILImage, Compose, RandomCrop, ToTensor
 from torch.utils.data import Dataset
@@ -247,7 +248,7 @@ def create_exp_folder():
         maxexp = max(nums)
         create_folder('experiment/exp{}'.format(maxexp))
     else:
-        maxexp = max(nums)+1
+        maxexp = int(max(nums))+1
         create_folder('experiment/exp{}'.format(maxexp))
     return ('experiment/exp{}'.format(maxexp))
 

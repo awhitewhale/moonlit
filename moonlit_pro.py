@@ -1,3 +1,5 @@
+import os 
+os.environ['CUDA_VISIBLE_DEVICES'] = '0,1,2,3,4,5,6,7'
 from torch.nn.modules.utils import _pair
 from mmcv.ops import modulated_deform_conv2d
 from lkconv import ReparamLargeKernelConv
@@ -10,8 +12,8 @@ import vits
 class moonlit(nn.Module):
     def __init__(self, opt):
         super(moonlit, self).__init__()
-        self.UMRC = UMRC(opt)
-        self.LDRN = LDRN(opt)
+        self.UMRC = torch.nn.DataParallel(UMRC(opt))
+        self.LDRN = torch.nn.DataParallel(LDRN(opt))
 
     def forward(self, x_query, x_key, opt):
         key, query, labels, inter = self.UMRC(x_query, x_key, opt)
@@ -257,7 +259,7 @@ class MoCo(nn.Module):
         # gather keys before updating queue
         # keys = concat_all_gather(keys)
         batch_size = keys.shape[0]
-
+        self.K = self.K * batch_size
         ptr = int(self.queue_ptr)
         assert self.K % batch_size == 0  # for simplicity
 
