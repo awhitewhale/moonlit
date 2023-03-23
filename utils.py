@@ -11,7 +11,6 @@ import scipy.io
 from os.path import dirname
 from os.path import join
 import scipy
-from PIL import Image
 import PIL
 import scipy.ndimage
 import numpy as np
