@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="liuyifan@222.20.97.43:123">
+  <component name="PublishConfigData" serverName="liuyifan@222.20.97.43:123">
     <serverData>
-      <paths name="liuyifan@222.20.96.20:110 (1)">
+      <paths name="liuyifan2@222.20.97.89:11224">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="liuyifan@222.20.96.20:110 (2)">
+      <paths name="liuyifan2@222.20.97.89:11224 password">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="liuyifan@222.20.96.20:118">
+      <paths name="liuyifan2@222.20.97.89:11224 password (2)">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="liuyifan@222.20.96.20:120">
+      <paths name="liuyifan2@222.20.97.89:11224 password (3)">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="liuyifan@222.20.96.20:222">
+      <paths name="liuyifan2@222.20.97.89:11224 password (4)">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="liuyifan@222.20.96.96:22">
+      <paths name="liuyifan@222.20.97.43:110">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
@@ -51,7 +51,20 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="liuyifan@222.20.97.43:124">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="liuyifan@222.20.97.89:11224 password">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
     </serverData>
-    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

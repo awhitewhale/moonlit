@@ -77,5 +77,5 @@ if __name__ == '__main__':
     parser.add_argument('--net_name', type=str, default='resnet')
     # parser.add_argument('--net_name', type=str, default='vit')
     parser = parser.parse_args()
-    train(parser)
+    train(parser) 
 
