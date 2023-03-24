@@ -72,7 +72,7 @@ if __name__ == '__main__':
     parser.add_argument('--UMRC_epoch', type=int, default=100)
     parser.add_argument('--lr', type=float, default=1e-4)
     parser.add_argument('--num_workers', type=int, default=8)
-    parser.add_argument('--batch_size', type=int, default=100)
+    parser.add_argument('--batch_size', type=int, default=10)
     parser.add_argument('--patch_size', type=int, default=128)
     parser.add_argument('--net_name', type=str, default='resnet')
     # parser.add_argument('--net_name', type=str, default='vit')

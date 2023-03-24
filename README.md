@@ -2,7 +2,7 @@
 code for MOONLIT: Momentum-contrast and Large-kernel for Multi-fine-grained Deraining
 
 train:
-`python train.py --batch_size 100 --net_name 'resnet'`
+`python train.py --batch_size 10 --net_name 'resnet'`
 
 `batch_size` can be set to 3, 10 or 100, meaning that the raind streaks are fine-grained into 3, 10 and 100 classes.
 
