@@ -3,7 +3,7 @@ code for MOONLIT: Momentum-contrast and Large-kernel for Multi-fine-grained Dera
 ## Installation
 pip install -r requirements.txt
 
-
+## How to Use
 train:
 `python train.py --batch_size 10 --net_name 'resnet'`
 
