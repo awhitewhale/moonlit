@@ -2,7 +2,7 @@
 code for MOONLIT: Momentum-contrast and Large-kernel for Multi-fine-grained Deraining
 ## Installation
 pip install -r requirements.txt
-
+We recommend to install mmcv-full by downloading mmcv-full*.whl from the official mmcv-full website. Please note that mmcv-full==1.53.
 ## How to Use
 train:
 `python train.py --batch_size 10 --net_name 'resnet'`
