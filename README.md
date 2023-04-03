@@ -1,5 +1,8 @@
 # MOONLIT: Momentum-contrast and Large-kernel for Multi-fine-grained Deraining
 code for MOONLIT: Momentum-contrast and Large-kernel for Multi-fine-grained Deraining
+## Installation
+pip install -r requirements.txt
+
 
 train:
 `python train.py --batch_size 10 --net_name 'resnet'`
